@@ -49,9 +49,12 @@ func TestAddJoker(t *testing.T) {
 			count++
 		}
 	}
-	fmt.Println(cards)
 	if count != 4 {
 		t.Error("Expected 4 Jokers, received:", count)
 
 	}
+}
+
+func TestRemoveCards(t *testing.T) {
+	
 }

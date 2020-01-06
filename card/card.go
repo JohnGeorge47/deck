@@ -126,6 +126,13 @@ func RemoveCards(cardTypes ...Rank) func(cards []Card) []Card {
 }
 
 func Remove(cardType Rank, cards []Card) []Card {
-
-	return cards
+      newDeck:=make([]Card,len(cards))
+     j:=0
+     for i:=0;i<len(cards);i++{
+     	if cardType!=cards[i].Rank{
+     		newDeck[j]=cards[i]
+     		j++
+		}
+	 }
+	return newDeck
 }
