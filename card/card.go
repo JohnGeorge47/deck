@@ -126,13 +126,25 @@ func RemoveCards(cardTypes ...Rank) func(cards []Card) []Card {
 }
 
 func Remove(cardType Rank, cards []Card) []Card {
-      newDeck:=make([]Card,len(cards))
-     j:=0
-     for i:=0;i<len(cards);i++{
-     	if cardType!=cards[i].Rank{
-     		newDeck[j]=cards[i]
-     		j++
+	newDeck := make([]Card, len(cards))
+	j := 0
+	for i := 0; i < len(cards); i++ {
+		if cardType != cards[i].Rank {
+			newDeck[j] = cards[i]
+			j++
 		}
-	 }
+	}
 	return newDeck
+}
+
+func MultipleDecks(deckCount int) func(cards []Card) []Card {
+	return func(cards []Card) []Card {
+		if deckCount == 1 {
+			return cards
+		}
+		for i := 0; i < deckCount-1; i++ {
+			cards = append(cards, New()...)
+		}
+		return cards
+	}
 }
