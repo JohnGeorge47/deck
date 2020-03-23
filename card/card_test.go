@@ -65,5 +65,5 @@ func TestRemoveCards(t *testing.T) {
 }
 
 func TestMultipleDecks(t *testing.T) {
-	
+
 }

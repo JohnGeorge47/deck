@@ -143,7 +143,7 @@ func MultipleDecks(deckCount int) func(cards []Card) []Card {
 			return cards
 		}
 		for i := 0; i < deckCount-1; i++ {
-			cards = append(cards, New()...)
+			cards = append(cards, cards...)
 		}
 		return cards
 	}
