@@ -56,14 +56,15 @@ func TestAddJoker(t *testing.T) {
 }
 
 func TestRemoveCards(t *testing.T) {
-	cards:=New(RemoveCards(Two))
-	for _,c:=range cards{
-		if c.Rank==Two{
+	cards := New(RemoveCards(Two))
+	fmt.Println(cards)
+	for _, c := range cards {
+		if c.Rank == Two {
 			t.Error("Expected no 2's but...")
 		}
 	}
 }
 
 func TestMultipleDecks(t *testing.T) {
-
+	MultipleDecks(3)
 }
